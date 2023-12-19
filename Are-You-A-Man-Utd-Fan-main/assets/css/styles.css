@@ -1,0 +1,103 @@
+/* custom CSS variables for color hues */
+:root {
+    --hue-main-bg-color: 500;
+    --hue-wrong: 0;
+    --hue-correct: 100;
+}
+/* common reset and set font-family for all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+/* styles for body element */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    --hue: var(--hue-main-bg-color);
+    background-color: hsl(var(--hue), 80%, 25%);
+    margin: 0;
+    position: relative;
+}
+/* styles for main container */
+.container {
+    width: 600px;
+    max-width: 80%;
+    background-color: yellow;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    flex-grow: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* styles for header element */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 2rem;
+}
+/* styles for paragraph elements */
+.paragraph {
+    margin: 15px;
+}
+
+/* styles for footer element */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+}
+/* styles button grid for answer choices */
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 15px 0;
+}
+/* styles for button elements */
+.btn {
+    --hue: var(--hue-main-bg-color);
+    background-color: hsl(var(--hue), 80%, 50%);
+    border-radius: 10px;
+    padding: 5px 10px;
+    
+}
+/* styles button hover state */
+.btn:hover{
+    border-color:  hsl(140, 96%, 18%);
+}
+/* styles buttons for correct answers */
+.btn.correct{
+    --hue: var(--hue-correct);
+}
+/* styles buttons for wrong answers */
+.btn.wrong{
+    --hue: var(--hue-wrong);
+}
+
+.begin-btn, .next-btn{
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* common class to hide elements. */
+.hide {
+    display: none;
+}
